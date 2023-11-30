@@ -8,7 +8,7 @@ export const MainView = () => {
             id: 1,
             title: "The Dark Knight",
             image:
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.themoviedb.org%2Fmovie%2F155-the-dark-knight%2Fimages%2Fposters&psig=AOvVaw2MhpcxzgiyJErmsTw0cz7E&ust=1701414351156000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCICh0cKU64IDFQAAAAAdAAAAABAE",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKjUEHR-_M2mRZRAy9riapfsEHZevoE3sh-O-qeIyi&s",
             description: "A superhero epic in the Batman trilogy",
             director: "Christopher Nolan",
             genre: "Action"
@@ -17,7 +17,7 @@ export const MainView = () => {
             id: 2,
             title: "Interstellar",
             image:
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.themoviedb.org%2Fmovie%2F157336-interstellar%2Fimages%2Fposters&psig=AOvVaw2u20xgzBVMIg_Ty_CR389v&ust=1701414529278000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCKikj5eV64IDFQAAAAAdAAAAABAE",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDgmUCNxQw7adsAAGIFulSGE4ZUEN3ZF1y3cDKC-WU&s",
             description: "A space exploration and time-bending adventure",
             director: "Christopher Nolan",
             genre: "Sci-Fi"
@@ -26,7 +26,7 @@ export const MainView = () => {
             id: 3,
             title: "The Godfather",
             image:
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.themoviedb.org%2Fmovie%2F238-the-godfather%2Fimages%2Fposters&psig=AOvVaw2SesbAhayc532GWSDNBv5X&ust=1701414564755000&source=images&cd=vfe&ved=0CBIQjRxqFwoTCKiHvKeV64IDFQAAAAAdAAAAABAE",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94fHo9ZHfdGTLQXxJNDf3uxMjR_3mcPeis16caRR8&s",
             description: "A story about mob boss Don Corleone turning over his empire to his son.",
             director: "Francis Ford Coppola",
             genre: "Crime"
@@ -66,7 +66,7 @@ export const MainView = () => {
     return (
         <div>
             {movies.map((movie) => (
-                <BookCard
+                <MovieCard
                     key={movie.id}
                     movie={movie}
                     onMovieClick={(newSelectedMovie) => {
