@@ -9,4 +9,4 @@ https://github.com/Cody-Ayers/movie_api
 
 - React
 - React-DOM
-
+- Parcel
