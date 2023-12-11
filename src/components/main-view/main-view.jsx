@@ -11,9 +11,10 @@ export const MainView = () => {
         fetch("https://codys-flix-0b23a40a1d0d.herokuapp.com/movies")
         .then((response) => response.json())
         .then((data) => {
-            const moviesFromApi = data.docs.map((doc) => {
+            console.log("movies from api:", data);
+            const moviesFromApi = data.map((movie) => {
                 return {
-                    _id: movie.id,
+                    _id: movie._id,
                     Title: movie.Title,
                     Description: movie.Description,
                     Genre: {

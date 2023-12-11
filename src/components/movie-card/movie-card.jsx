@@ -7,26 +7,26 @@ export const MovieCard = ({ movie, onMovieClick }) => {
                 onMovieClick(movie);
             }}
         >
-            {movie.title}
+            {movie.Title}
         </div>
     );
 };
 
 MovieCard.propTypes = {
     movie: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      director: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        bio: PropTypes.string.isRequired,
-        birthdate: PropTypes.number.isRequired,
-        deathdate: PropTypes.number,
+      Title: PropTypes.string.isRequired,
+      Description: PropTypes.string.isRequired,
+      Image: PropTypes.string.isRequired,
+      Director: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Bio: PropTypes.string.isRequired,
+        Birthdate: PropTypes.string.isRequired,
+        Deathdate: PropTypes.string,
       }),
-      genre: PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
+      Genre: PropTypes.shape({
+        Name: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
       }),
     }).isRequired,
-    onBookClick: PropTypes.func.isRequired,
+    onMovieClick: PropTypes.func.isRequired,
   };
