@@ -12,25 +12,12 @@ export const MainView = () => {
     const [movies, setMovies] = useState([]);
     const [selectedMovie, setSelectedMovie] = useState(null);
 
-    if (!user) {
-        return (
-            <>
-            <LoginView
-                onLoggedIn={(user, token) => {
-                    setUser(user);
-                    setToken(token);
-                }} />
-            or
-            <SignupView />
-            </>            
-        );
-    }
 
-    useEffect (() => {
+    useEffect(() => {
         if (!token) {
             return;
         }
-
+       
         fetch("https://codys-flix-0b23a40a1d0d.herokuapp.com/movies", {
             headers: { Authorization: `Bearer ${token}` }
         })
@@ -61,6 +48,20 @@ export const MainView = () => {
         });
     }, [token]);
 
+    if (!user) {
+        return (
+            <>
+            <LoginView
+                onLoggedIn={(user, token) => {
+                    setUser(user);
+                    setToken(token);
+                }} />
+            or
+            <SignupView />
+            </>            
+        );
+    }
+
     if (selectedMovie) {
         return (
             <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
@@ -70,6 +71,7 @@ export const MainView = () => {
     if (movies.length === 0) {
         return <div>The list is empty!</div>;
     }
+
 
     return (
         <div>
