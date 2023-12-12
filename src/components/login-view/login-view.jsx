@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const LoginView = () => {
+export const LoginView = ({ onLoggedIn }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const handleSubmit = (event) => {
@@ -8,8 +8,8 @@ export const LoginView = () => {
         event.preventDefault();
 
         const data = {
-            access: username,
-            secret: password
+            Username: username,
+            Password: password
         };
 
         fetch("https://codys-flix-0b23a40a1d0d.herokuapp.com/login", {

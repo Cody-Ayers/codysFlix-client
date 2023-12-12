@@ -59,7 +59,7 @@ export const MainView = () => {
 
             setMovies(moviesFromApi);
         });
-    }, []);
+    }, [token]);
 
     if (selectedMovie) {
         return (
