@@ -27276,12 +27276,12 @@ MovieCard.propTypes = {
     movie: (0, _propTypesDefault.default).shape({
         Title: (0, _propTypesDefault.default).string.isRequired,
         Description: (0, _propTypesDefault.default).string.isRequired,
-        Image: (0, _propTypesDefault.default).string.isRequired,
+        ImageURL: (0, _propTypesDefault.default).string.isRequired,
         Director: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
             Bio: (0, _propTypesDefault.default).string.isRequired,
-            Birthdate: (0, _propTypesDefault.default).string.isRequired,
-            Deathdate: (0, _propTypesDefault.default).string
+            BirthDate: (0, _propTypesDefault.default).string.isRequired,
+            DeathDate: (0, _propTypesDefault.default).string
         }),
         Genre: (0, _propTypesDefault.default).shape({
             Name: (0, _propTypesDefault.default).string.isRequired,
