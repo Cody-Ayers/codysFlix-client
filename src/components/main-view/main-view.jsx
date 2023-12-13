@@ -56,7 +56,10 @@ export const MainView = () => {
             {!user ? (
                 <>
                   <Col md={6}>
-                    <LoginView onLoggedIn={(user) => setUser(user)} />
+                    <LoginView onLoggedIn={(user) => {
+                        setUser(user)
+                        setToken(token)
+                    }} />
                     or
                     <SignupView />
                   </Col>
@@ -74,7 +77,7 @@ export const MainView = () => {
             ) : (
                 <>
                   {movies.map((movie) => (
-                    <Col className="mb-5" key={movie._id} md={4}>
+                    <Col className="mb-" key={movie._id} md={4}>
                         <MovieCard
                         movie={movie}
                         onMovieClick={(newSelectedMovie) => {
