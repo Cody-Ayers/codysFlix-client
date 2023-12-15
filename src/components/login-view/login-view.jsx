@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 export const LoginView = ({ onLoggedIn }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    
     const handleSubmit = (event) => {
         //This prevents the default behavior od the form which is to reload the entire page
         event.preventDefault();
