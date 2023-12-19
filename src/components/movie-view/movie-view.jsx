@@ -1,43 +1,44 @@
-import { useParams } from "react-router";
-import { Link } from "react-router-dom";
-import "./movie-view.scss";
+import { React } from 'react';
+import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Button, Card, Row, Col, Container } from 'react-bootstrap';
 
 export const MovieView = ({ movies }) => {
-    const { movieId } = useParams();
+	const { movieId } = useParams();
 
-    const movie = movies.find((m) => m._id === movieId);
+	const movie = movies.find((m) => m._id === movieId);
 
-
-    return (
-        <div>
-            <div>
-                <img  className="w-100" src={movie.ImageURL} />
-            </div>
-            <div>
-                <span>Title: </span>
-                <span>{movie.Title}</span>
-            </div>
-            <div>
-                <span>Description: </span>
-                <span>{movie.Description}</span>
-            </div>
-            <div>
-                <span>Director: </span>
-                <span>{movie.Director.Name}</span>:
-                <div>
-                <span>{movie.Director.Bio}</span>
-                </div>
-            </div>
-            <div>
-                <span>Genre: </span>
-                <span>{movie.Genre.Name}</span>:
-                <div>
-                <span>{movie.Genre.Description}</span>
-                </div>
-            </div>
-            <Link to={`/`}>
-                <button className="backButton">BACK</button>
-            </Link>
-        </div>
-    );
+	return (
+		<>
+			<Container>
+				<Card className='shadow p-6'>
+					<Row>
+						<Col md='6'>
+							<Card.Img className='w-100' src={movie.ImageURL} alt='' />
+						</Col>
+						<Col>
+							<Card.Body>
+								<Card.Title className='mt-2'>{movie.Title}</Card.Title>
+								<Card.Text>{movie.Description}</Card.Text>
+								<Card.Text>
+									<span className='text-title'>Genre:</span> {movie.Genre.Name}
+								</Card.Text>
+								<Card.Text>
+									<span className='text-title'>Director:</span>
+									{movie.Director.Name}
+								</Card.Text>
+                                <Card.Text>
+                                    {movie.Director.Bio}
+                                </Card.Text>
+								<Link to='/'>
+									<Button className='back-button'>Back</Button>
+								</Link>
+							</Card.Body>
+						</Col>
+					</Row>
+				</Card>
+			</Container>
+		</>
+	);
 };
