@@ -1,4 +1,4 @@
-import { MovieView } from "../movie-view/movie-view";
+import { MovieCard } from "../movie-card/movie-card";
 import { Row, Col, Button } from "react-bootstrap";
 
 export const FavoriteView = ({ favoriteMovies }) => {
@@ -8,8 +8,7 @@ export const FavoriteView = ({ favoriteMovies }) => {
                 <Row className="justify-content-center">
                     {favoriteMovies.map((movie) => (
                         <Col xs={8} sm={6} md={4} lg={3} xl={2} key={movie._id}>
-                            <MovieView movie={movie} />
-                            <Button onClick={() => removeFav(movies._id)}>Remove From Favorites</Button>
+                            <MovieCard movie={movie} />
                         </Col>
                     ))}
                 </Row>

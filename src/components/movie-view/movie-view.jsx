@@ -1,54 +1,56 @@
-import { React } from 'react';
+import { React, useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import { Button, Card, Row, Col, Container } from 'react-bootstrap';
 
-export const MovieView = ({ movies, isFavorite, token }) => {
+export const MovieView = ({ movies, user, setUser, token }) => {
 	const { movieId } = useParams();
 
 	const movie = movies.find((m) => m._id === movieId);
 
-    const addFavorite = (user) =>{
+    const [isFavorite, setIsFavorite] = useState(user.Favorites.includes(movie._id));
+
+
+    const addFavorite = () => {
         fetch(
             `https://codys-flix-0b23a40a1d0d.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
             {method: "POST", headers: {Authorization: `Bearer ${token}` } }
         )
             .then((response) => {
                 if(response.ok) {
-                    return response.json();
+                    alert ("Movie added to Favorites");
+                    user.Favorites.push(movie._id);
+                    localStorage.setItem('user',  JSON.stringify(user))
+                    setUser(user);
+                    setIsFavorite(true);
                 } else {
                     console.log("Failed to add movie to Favorites");
                 }
             })
-            .then((users) => {
-                alert("Movie added to Favorites");
-                localStorage.setItem('user', JSON.stringify(user))
-                
-            })
             .catch((error) => {
-                alert(error);
+                alert(error.error);
             });
     };
 
-    const removeFavorite = (user) => {
+    const removeFavorite = () => {
         fetch(
             `https://codys-flix-0b23a40a1d0d.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
             {method: "DELETE", headers: {Authorization: `Bearer ${token}` } }
         )
             .then((response) => {
                 if(response.ok) {
-                    return response.json();
+                    alert ("Removed movie from Favorites");
+                    const idx = user.Favorites.indexOf(movie._id);
+                    user.Favorites.splice(idx, 1);
+                    localStorage.setItem("user", JSON.stringify(user))
+                    setUser(user);
+                    setIsFavorite(false);
                 } else {
                     console.log("Failed to delete movie from Favorites");
                 }
             })
-            .then((users) => {
-                alert("Movie deleted from Favorites");
-                localStorage.setItem('user', JSON.stringify(user))
-                
-            })
             .catch((error) => {
-                alert(error);
+                alert(error.error);
             });
     }
 
