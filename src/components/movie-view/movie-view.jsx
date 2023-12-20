@@ -1,13 +1,56 @@
 import { React } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { Button, Card, Row, Col, Container } from 'react-bootstrap';
 
-export const MovieView = ({ movies }) => {
+export const MovieView = ({ movies, isFavorite, token }) => {
 	const { movieId } = useParams();
 
 	const movie = movies.find((m) => m._id === movieId);
+
+    const addFavorite = (user) =>{
+        fetch(
+            `https://codys-flix-0b23a40a1d0d.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
+            {method: "POST", headers: {Authorization: `Bearer ${token}` } }
+        )
+            .then((response) => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    console.log("Failed to add movie to Favorites");
+                }
+            })
+            .then((users) => {
+                alert("Movie added to Favorites");
+                localStorage.setItem('user', JSON.stringify(user))
+                
+            })
+            .catch((error) => {
+                alert(error);
+            });
+    };
+
+    const removeFavorite = (user) => {
+        fetch(
+            `https://codys-flix-0b23a40a1d0d.herokuapp.com/users/${user.Username}/movies/${movie._id}`,
+            {method: "DELETE", headers: {Authorization: `Bearer ${token}` } }
+        )
+            .then((response) => {
+                if(response.ok) {
+                    return response.json();
+                } else {
+                    console.log("Failed to delete movie from Favorites");
+                }
+            })
+            .then((users) => {
+                alert("Movie deleted from Favorites");
+                localStorage.setItem('user', JSON.stringify(user))
+                
+            })
+            .catch((error) => {
+                alert(error);
+            });
+    }
 
 	return (
 		<>
@@ -37,6 +80,15 @@ export const MovieView = ({ movies }) => {
 							</Card.Body>
 						</Col>
 					</Row>
+                    <Row>
+                    <div>
+                    {isFavorite ? (
+                        <Button onClick={() => removeFavorite(movie._id)}>Remove</Button>
+                    ) : (
+                        <Button onClick={() => addFavorite(movie._id)}>Add</Button>
+                    )}
+                </div>
+                    </Row>
 				</Card>
 			</Container>
 		</>
