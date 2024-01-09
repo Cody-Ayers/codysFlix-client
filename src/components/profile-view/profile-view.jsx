@@ -68,7 +68,7 @@ export const ProfileView = ({ token, movies, user }) => {
     return (
         <Container>
             <Row>
-                <Col md={4}>
+                <Col align="center">
                     <Card>
                         <Card.Body>
                             <Card.Title>Profile Account</Card.Title>
@@ -77,7 +77,7 @@ export const ProfileView = ({ token, movies, user }) => {
                         </Card.Body>
                     </Card>
                 </Col>
-                <Col md={8}>
+                <Col align="center">
                     <Card>
                         <Card.Body>
                             <Card.Title>Update Profile</Card.Title>
@@ -121,11 +121,7 @@ export const ProfileView = ({ token, movies, user }) => {
                             />
                         </Form.Group>                        
                     </Form>
-                    </Card.Body>
-                    </Card>
-                </Col>
-            </Row>
-            <Row className="justify-content-center">
+                    <Row className="justify-content-center">
 					<Col>
 						<Button className="update" type="submit" onClick={handleUpdate}>
 							Update Account
@@ -135,6 +131,10 @@ export const ProfileView = ({ token, movies, user }) => {
 						</Button>
 					</Col>
 				</Row>
+                    </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
                 <Row>
                     <FavoriteView favoriteMovies={favoriteMovies}/>
                 </Row>
