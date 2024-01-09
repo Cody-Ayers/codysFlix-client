@@ -77,7 +77,7 @@ export const SignupView = () => {
       />
       </Form.Group>
         
-      <Button variant="primary" type="submit">Submit</Button>
+      <Button variant="primary" onClick={handleSubmit} type="submit">Submit</Button>
     </Form>
   );
 };
