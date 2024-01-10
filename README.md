@@ -18,4 +18,4 @@ Also utilized the following:
 ## Deployed
 
 I used Netlify to deploy my app to the web and you can visit it here:
-https://codys-flix.netlify.app/login
+https://codys-flix.netlify.app
