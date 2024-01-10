@@ -76,6 +76,9 @@ export const MovieView = ({ movies, user, setUser, token }) => {
                                 <Card.Text>
                                     {movie.Director.Bio}
                                 </Card.Text>
+                                <Card.Text>
+                                    {movie.Featured}
+                                </Card.Text>
 								<Link to='/'>
 									<Button className='back-button'>Back</Button>
 								</Link>
