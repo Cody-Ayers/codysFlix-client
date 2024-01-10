@@ -41217,7 +41217,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "text-title",
-                                                    children: "Genre:"
+                                                    children: "Genre: "
                                                 }, void 0, false, {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
                                                     lineNumber: 70,
@@ -41235,7 +41235,7 @@ const MovieView = ({ movies, user, setUser, token })=>{
                                             children: [
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                                     className: "text-title",
-                                                    children: "Director:"
+                                                    children: "Director: "
                                                 }, void 0, false, {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
                                                     lineNumber: 73,
@@ -41249,17 +41249,37 @@ const MovieView = ({ movies, user, setUser, token })=>{
                                             columnNumber: 9
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
-                                            children: movie.Director.Bio
-                                        }, void 0, false, {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    className: "text-title",
+                                                    children: "Director Bio: "
+                                                }, void 0, false, {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 77,
+                                                    columnNumber: 33
+                                                }, undefined),
+                                                movie.Director.Bio
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
                                             lineNumber: 76,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Text, {
-                                            children: movie.Featured
-                                        }, void 0, false, {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                    className: "text-title",
+                                                    children: "Featured: "
+                                                }, void 0, false, {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 81,
+                                                    columnNumber: 37
+                                                }, undefined),
+                                                movie.Featured ? "Yes" : "No"
+                                            ]
+                                        }, void 0, true, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 79,
+                                            lineNumber: 80,
                                             columnNumber: 33
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -41269,12 +41289,12 @@ const MovieView = ({ movies, user, setUser, token })=>{
                                                 children: "Back"
                                             }, void 0, false, {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 83,
+                                                lineNumber: 85,
                                                 columnNumber: 10
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 82,
+                                            lineNumber: 84,
                                             columnNumber: 9
                                         }, undefined)
                                     ]
@@ -41301,24 +41321,24 @@ const MovieView = ({ movies, user, setUser, token })=>{
                                 children: "Remove"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 91,
+                                lineNumber: 93,
                                 columnNumber: 25
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                 onClick: ()=>addFavorite(movie._id),
                                 children: "Add"
                             }, void 0, false, {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 93,
+                                lineNumber: 95,
                                 columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 89,
+                            lineNumber: 91,
                             columnNumber: 21
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 88,
+                        lineNumber: 90,
                         columnNumber: 21
                     }, undefined)
                 ]

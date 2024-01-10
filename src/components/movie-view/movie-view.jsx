@@ -67,17 +67,19 @@ export const MovieView = ({ movies, user, setUser, token }) => {
 								<Card.Title className='mt-2'>{movie.Title}</Card.Title>
 								<Card.Text>{movie.Description}</Card.Text>
 								<Card.Text>
-									<span className='text-title'>Genre:</span> {movie.Genre.Name}
+									<span className='text-title'>Genre: </span> {movie.Genre.Name}
 								</Card.Text>
 								<Card.Text>
-									<span className='text-title'>Director:</span>
+									<span className='text-title'>Director: </span>
 									{movie.Director.Name}
 								</Card.Text>
                                 <Card.Text>
+                                <span className='text-title'>Director Bio: </span>
                                     {movie.Director.Bio}
                                 </Card.Text>
                                 <Card.Text>
-                                    {movie.Featured}
+                                    <span className='text-title'>Featured: </span>
+                                    {movie.Featured ? "Yes" : "No"}
                                 </Card.Text>
 								<Link to='/'>
 									<Button className='back-button'>Back</Button>
