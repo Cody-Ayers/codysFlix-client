@@ -32,6 +32,6 @@ MovieCard.propTypes = {
         Name: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
       }),
-      Featured: PropTypes.boolean,isRequired,
+      Featured: PropTypes.boolean.isRequired,
     }).isRequired,
   };

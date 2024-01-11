@@ -27480,8 +27480,7 @@ MovieCard.propTypes = {
             Name: (0, _propTypesDefault.default).string.isRequired,
             Description: (0, _propTypesDefault.default).string.isRequired
         }),
-        Featured: (0, _propTypesDefault.default).boolean,
-        isRequired
+        Featured: (0, _propTypesDefault.default).boolean.isRequired
     }).isRequired
 };
 var _c;
