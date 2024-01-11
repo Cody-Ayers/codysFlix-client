@@ -27251,8 +27251,8 @@ const MainView = ()=>{
                 filteredMovies: filteredMovies
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 64,
-                columnNumber: 13
+                lineNumber: 63,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _rowDefault.default), {
                 className: "justify-content-md-center",
@@ -27270,8 +27270,8 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 78,
-                            columnNumber: 21
+                            lineNumber: 77,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/login",
@@ -27290,8 +27290,8 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 92,
-                            columnNumber: 21
+                            lineNumber: 91,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/movies/:movieId",
@@ -27313,8 +27313,8 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 109,
-                            columnNumber: 21
+                            lineNumber: 110,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/",
@@ -27349,8 +27349,8 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 125,
-                            columnNumber: 22
+                            lineNumber: 131,
+                            columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                             path: "/profile",
@@ -27369,28 +27369,28 @@ const MainView = ()=>{
                             }, void 0, false)
                         }, void 0, false, {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 158,
-                            columnNumber: 17
+                            lineNumber: 165,
+                            columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 77,
-                    columnNumber: 17
+                    lineNumber: 76,
+                    columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 76,
-                columnNumber: 13
+                lineNumber: 75,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 63,
-        columnNumber: 9
+        lineNumber: 62,
+        columnNumber: 5
     }, undefined);
 };
-_s(MainView, "NccnTgz68ssdVds2JW5r1PU19cU=");
+_s(MainView, "HGTd+HAjpkZtB0gv1R7z2gNHf28=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -41444,7 +41444,7 @@ const LoginView = ({ onLoggedIn })=>{
                         type: "text",
                         value: username,
                         onChange: (e)=>setUsername(e.target.value),
-                        minLength: "8",
+                        minLength: "6",
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
@@ -41471,7 +41471,7 @@ const LoginView = ({ onLoggedIn })=>{
                         type: "password",
                         value: password,
                         onChange: (e)=>setPassword(e.target.value),
-                        minLength: "8",
+                        minLength: "6",
                         required: true
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
