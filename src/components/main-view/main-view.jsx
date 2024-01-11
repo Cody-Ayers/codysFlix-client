@@ -123,38 +123,25 @@ export const MainView = () => {
                     }
                     />
                     <Route
-            path="/"
-            element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <Col>The list is empty!</Col>
-                ) : searchQuery ? (
-                  <>
-                    <Row>
-                      {filteredMovies.map((movie) => (
-                        <Col className="mb-4" key={movie._id} md={3} >
-                          <MovieCard
-                            user={user}
-                            setUser={setUser}
-                            movie={movie} />
-                        </Col>
-                      ))}
-                    </Row>
-                  </>
-                ) : (
-                  <>
-                    {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
-                        <MovieCard movie={movie} />
-                      </Col>
-                    ))}
-                  </>
-                )}
-              </>
-            }
-          />
+                    path="/"
+                    element={
+                        <>
+                          {!user ? (
+                            <Navigate to="/login" replace />
+                          ) : movies.length === 0 ? (
+                            <Col>The list is empty!</Col>
+                          ) : (
+                            <>
+                             {movies.map((movie) => (
+                                <Col className="mb-" key={movie._id} md={4}>
+                                    <MovieCard movie={movie} />
+                                </Col>
+                             ))}
+                            </>
+                          )}
+                        </>
+                    }
+                />   
                 <Route
                 path="/profile"
                 element={
