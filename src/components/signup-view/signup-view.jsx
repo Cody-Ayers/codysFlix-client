@@ -8,12 +8,8 @@ export const SignupView = () => {
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
 
-  const navigate = useNavigate();
-
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    navigate("/");
 
     const data = {
       Username: username,
