@@ -116,7 +116,7 @@ export const MainView = () => {
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
                 ) : (
-                  <Col md={8}>
+                  <Col xs={12}>
                     <MovieView
                       movies={movies}
                       user={user}
@@ -136,28 +136,34 @@ export const MainView = () => {
                   <Navigate to="/login" replace />
                 ) : movies.length === 0 ? (
                   <Col>The list is empty!</Col>
-                ) : searchQuery ? (
-                  <>
-                    <Row>
-                      {filteredMovies.map((movie) => (
-                        <Col className="mb-4" key={movie._id} md={3}>
-                          <MovieCard
-                            user={user}
-                            setUser={setUser}
-                            movie={movie}
-                          />
+                ) : (
+                  <div className="page-wrap w-100">
+                    {!searchQuery && (
+                      <>
+                        <h1 style={{ fontFamily: "Georgia, serif", color: "#f2efe9", marginBottom: "6px" }}>Movies</h1>
+                        <p style={{ color: "#a29d94", marginBottom: "28px" }}>
+                          Browse the collection, open a film for the full details, and heart the ones you love.
+                        </p>
+                      </>
+                    )}
+                    {searchQuery && (
+                      <p style={{ color: "#a29d94", marginBottom: "20px" }}>
+                        {filteredMovies.length} result{filteredMovies.length !== 1 ? "s" : ""} for &ldquo;{searchQuery}&rdquo;
+                      </p>
+                    )}
+                    <Row xs={2} sm={2} md={3} lg={4} className="g-4">
+                      {(searchQuery ? filteredMovies : movies).map((movie) => (
+                        <Col key={movie._id}>
+                          <MovieCard movie={movie} setUser={setUser} user={user} />
                         </Col>
                       ))}
+                      {searchQuery && filteredMovies.length === 0 && (
+                        <Col xs={12}>
+                          <p style={{ color: "#a29d94" }}>No movies match that search.</p>
+                        </Col>
+                      )}
                     </Row>
-                  </>
-                ) : (
-                  <>
-                    {movies.map((movie) => (
-                      <Col className="mb-4" key={movie._id} md={3}>
-                        <MovieCard movie={movie} setUser={setUser} />
-                      </Col>
-                    ))}
-                  </>
+                  </div>
                 )}
               </>
             }

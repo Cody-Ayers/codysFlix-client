@@ -1,8 +1,71 @@
-.openButton {
-    padding: 4px 12px 4px 12px;
-    font-weight: 300;
-    color: rgb(1, 1, 1);
-    background-color: rgb(3, 70 , 3);
-    border: none;
-    border-radius: 5px;
+.movie-card {
+  background-color: #17171a !important;
+  border: 0.5px solid #2c2c33 !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: #3d3d47 !important;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
   }
+
+  &__poster-wrap {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: #1f1f24;
+  }
+
+  &__poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__poster {
+    transform: scale(1.03);
+  }
+
+  &__title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f2efe9 !important;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__director {
+    font-size: 0.8rem;
+    color: #a29d94;
+    margin-bottom: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    background: transparent;
+    color: #e8845c;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 5px 0;
+    border: none;
+    text-decoration: none;
+    transition: color 0.2s, gap 0.2s;
+    gap: 4px;
+
+    &:hover {
+      color: #f2efe9;
+    }
+  }
+}
